@@ -21,7 +21,7 @@ const CurrencyConverterMaterialPage({super.key});
               )
               ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(20.0),
                 child: TextField(
                   style: const TextStyle(
                     color: Colors.black,
@@ -57,6 +57,7 @@ const CurrencyConverterMaterialPage({super.key});
                   ),
                 ),
               ),
+              
             ],
           ),
         ), 

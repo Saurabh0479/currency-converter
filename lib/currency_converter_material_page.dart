@@ -1,13 +1,19 @@
 // import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-class CurrencyConverterMaterialPage extends StatelessWidget {
-const CurrencyConverterMaterialPage({super.key});
+class CurrencyConverterMaterialPage extends StatefulWidget{
+ const CurrencyConverterMaterialPage({super.key});
+
+ @override
+  State<CurrencyConverterMaterialPage> createState() => _CurrencyConverterMaterialPageState();
+}
+
+class _CurrencyConverterMaterialPageState extends State<CurrencyConverterMaterialPage>{
+    double result = 0;
+    final TextEditingController textEditingController = TextEditingController();                                                 
 
   @override
   Widget build(BuildContext context){
-    double result = 0;
-    final TextEditingController textEditingController = TextEditingController();                                                 
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 68, 105, 255),
         appBar: AppBar(
@@ -27,7 +33,7 @@ const CurrencyConverterMaterialPage({super.key});
           // crossAxisAlignment: CrossAxisAlignment.end,
           children: [
              Text(
-              result.toString() ,
+               'INR ${result != 0 ? result.toStringAsFixed(2): result.toStringAsFixed(0)}' ,
               style: const TextStyle(
                 fontSize: 60,
                 fontWeight: FontWeight.bold,
@@ -82,6 +88,9 @@ const CurrencyConverterMaterialPage({super.key});
                 child: ElevatedButton(
                   onPressed: (){
                     result = double.parse(textEditingController.text)*94.36;
+                    setState( () {
+
+                    });
                   },
                   style: ElevatedButton.styleFrom(  
                     // elevation: WidgetStatePropertyAll(10),
